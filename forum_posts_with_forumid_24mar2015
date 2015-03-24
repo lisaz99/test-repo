@@ -1,0 +1,22 @@
+select 
+`forum_posts`.`user_id` AS `user_id`,
+`forum_threads_forum_23mar2015`.`forum_id` AS `forum_id`,
+`forum_threads_forum_23mar2015`.`name` AS `forum_name`,
+`forum_posts`.`id` AS `post_id`,
+`forum_posts`.`thread_id` AS `thread_id`,
+`forum_posts`.`post_time` AS `post_time`,
+`forum_posts`.`edit_time` AS `edit_time`,
+`forum_posts`.`deleted` AS `deleted`,
+`forum_posts`.`is_spam` AS `is_spam`,
+`forum_posts`.`original` AS `original`,
+`forum_posts`.`stickied` AS `stickied`,
+`forum_posts`.`approved` AS `approved`,
+`forum_posts`.`anonymous` AS `anonymous`,
+`forum_posts`.`votes` AS `votes`,
+`forum_posts`.`user_agent` AS `user_agent`,
+`forum_posts`.`text_type` AS `text_type`,
+`forum_threads_forum_23mar2015`.`parent_id` AS `parent_id`,
+`forum_threads_forum_23mar2015`.`forum_delete` AS `forum_delete`,
+`forum_threads_forum_23mar2015`.`can_post` AS `can_post`,
+`forum_threads_forum_23mar2015`.`show_threads` AS `show_threads` 
+from (`forum_posts` left join `forum_threads_forum_23mar2015` on((`forum_threads_forum_23mar2015`.`threads_id` = `forum_posts`.`thread_id`))) order by `forum_posts`.`user_id`
