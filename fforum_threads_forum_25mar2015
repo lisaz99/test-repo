@@ -1,0 +1,34 @@
+CREATE 
+    ALGORITHM = UNDEFINED 
+    DEFINER = `lisa`@`%` 
+    SQL SECURITY DEFINER
+VIEW `forum_threads_forum_25mar2015` AS
+    SELECT 
+        `forum_threads`.`id` AS `threads_id`,
+        `forum_threads`.`forum_id` AS `forum_id`,
+        `forum_forums_lisa's copy (updated parent id)`.`description` AS `forum_name`,
+        `forum_forums_lisa's copy (updated parent id)`.`parent_id` AS `parent_id`,
+        `forum_forums_lisa's copy (updated parent id)`.`name` AS `parent_forum_id`,
+        `forum_threads`.`user_id` AS `user_id`,
+        `forum_threads`.`posted_time` AS `posted_time`,
+        `forum_threads`.`last_updated_time` AS `last_updated_time`,
+        `forum_threads`.`last_updated_user` AS `last_updated_user`,
+        `forum_threads`.`deleted` AS `deleted`,
+        `forum_threads`.`is_spam` AS `is_spam`,
+        `forum_threads`.`stickied` AS `stickied`,
+        `forum_threads`.`approved` AS `approved`,
+        `forum_threads`.`unresolved` AS `unresolved`,
+        `forum_threads`.`instructor_replied` AS `instructor_replied`,
+        `forum_threads`.`num_posts` AS `num_posts`,
+        `forum_threads`.`num_views` AS `num_views`,
+        `forum_threads`.`votes` AS `votes`,
+        `forum_threads`.`locked` AS `locked`,
+        `forum_threads`.`anonymous` AS `anonymous`,
+        `forum_threads`.`title` AS `title`,
+        `forum_threads`.`triage_sync_status` AS `triage_sync_status`,
+        `forum_threads`.`triage_status` AS `triage_status`,
+        `forum_threads`.`private` AS `private`,
+        `forum_threads`.`problem_id` AS `problem_id`
+    FROM
+        (`forum_threads`
+        JOIN `forum_forums_lisa's copy (updated parent id)` ON ((`forum_threads`.`forum_id` = `forum_forums_lisa's copy (updated parent id)`.`id`)))
