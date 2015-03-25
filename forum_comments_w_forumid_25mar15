@@ -1,0 +1,24 @@
+CREATE 
+    ALGORITHM = UNDEFINED 
+    DEFINER = `lisa`@`%` 
+    SQL SECURITY DEFINER
+VIEW `forum_comments_w_forumid_25mar15` AS
+    SELECT 
+        `forum_comments`.`user_id` AS `user_id`,
+        `forum_threads_forum_25mar2015`.`forum_id` AS `forum_id`,
+        `forum_threads_forum_25mar2015`.`forum_name` AS `forum_name`,
+        `forum_threads_forum_25mar2015`.`parent_id` AS `parent_id`,
+        `forum_threads_forum_25mar2015`.`parent_forum_id` AS `parent_forum_id`,
+        `forum_comments`.`id` AS `comment_id`,
+        `forum_comments`.`thread_id` AS `thread_id`,
+        `forum_comments`.`post_id` AS `post_id`,
+        `forum_comments`.`post_time` AS `post_time`,
+        `forum_comments`.`deleted` AS `deleted`,
+        `forum_comments`.`is_spam` AS `is_spam`,
+        `forum_comments`.`votes` AS `votes`,
+        `forum_comments`.`anonymous` AS `anonymous`,
+        `forum_comments`.`user_agent` AS `user_agent`,
+        `forum_comments`.`text_type` AS `text_type`
+    FROM
+        (`forum_threads_forum_25mar2015`
+        JOIN `forum_comments` ON ((`forum_threads_forum_25mar2015`.`threads_id` = `forum_comments`.`thread_id`)))
