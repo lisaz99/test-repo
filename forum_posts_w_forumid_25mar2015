@@ -1,0 +1,27 @@
+CREATE 
+    ALGORITHM = UNDEFINED 
+    DEFINER = `lisa`@`%` 
+    SQL SECURITY DEFINER
+VIEW `forum_posts_w_forumid_25mar2015` AS
+    SELECT 
+        `forum_posts`.`user_id` AS `user_id`,
+        `forum_threads_forum_25mar2015`.`forum_id` AS `forum_id`,
+        `forum_threads_forum_25mar2015`.`forum_name` AS `forum_name`,
+        `forum_threads_forum_25mar2015`.`parent_id` AS `parent_id`,
+        `forum_threads_forum_25mar2015`.`parent_forum_id` AS `parent_forum_id`,
+        `forum_posts`.`id` AS `post_id`,
+        `forum_posts`.`thread_id` AS `thread_id`,
+        `forum_posts`.`post_time` AS `post_time`,
+        `forum_posts`.`edit_time` AS `edit_time`,
+        `forum_posts`.`deleted` AS `deleted`,
+        `forum_posts`.`is_spam` AS `is_spam`,
+        `forum_posts`.`original` AS `original`,
+        `forum_posts`.`stickied` AS `stickied`,
+        `forum_posts`.`approved` AS `approved`,
+        `forum_posts`.`anonymous` AS `anonymous`,
+        `forum_posts`.`votes` AS `votes`,
+        `forum_posts`.`user_agent` AS `user_agent`,
+        `forum_posts`.`text_type` AS `text_type`
+    FROM
+        (`forum_threads_forum_25mar2015`
+        JOIN `forum_posts` ON ((`forum_threads_forum_25mar2015`.`threads_id` = `forum_posts`.`thread_id`)))
