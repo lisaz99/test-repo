@@ -1,0 +1,13 @@
+CREATE 
+    ALGORITHM = UNDEFINED 
+    DEFINER = `lisa`@`%` 
+    SQL SECURITY DEFINER
+VIEW `forum_comments_one_step_25mar2015` AS
+    SELECT 
+        `forum_comments`.`user_id` AS `user_id`,
+        `forum_forums_lisa's copy (updated parent id)`.`parent_id` AS `parent_id`
+    FROM
+        ((`forum_comments`
+        LEFT JOIN `forum_threads` ON ((`forum_threads`.`id` = `forum_comments`.`thread_id`)))
+        JOIN `forum_forums_lisa's copy (updated parent id)` ON ((`forum_forums_lisa's copy (updated parent id)`.`id` = `forum_threads`.`forum_id`)))
+    ORDER BY `forum_comments`.`user_id`
