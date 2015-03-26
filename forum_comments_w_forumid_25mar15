@@ -1,7 +1,5 @@
 CREATE 
-    ALGORITHM = UNDEFINED 
-    DEFINER = `lisa`@`%` 
-    SQL SECURITY DEFINER
+  
 VIEW `forum_comments_w_forumid_25mar15` AS
     SELECT 
         `forum_comments`.`user_id` AS `user_id`,
