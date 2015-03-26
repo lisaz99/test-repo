@@ -1,0 +1,4 @@
+ALTER TABLE `ltto-001_2015-02-12`.`forum_forums_lisa's copy (updated parent id)` 
+CHANGE COLUMN `id` `forum_id` INT(11) NOT NULL AUTO_INCREMENT ,
+CHANGE COLUMN `name` `forum_name` VARCHAR(255) NOT NULL ,
+ADD COLUMN `parent_name` VARCHAR(45) NOT NULL AFTER `forum_id`;
