@@ -1,0 +1,9 @@
+SELECT 
+`ltto-001_2015-02-12`.`data_vector5_set_or_update_my_goal`.`session_user_id`,
+
+MAX(`ltto-001_2015-02-12`.`data_vector5_set_or_update_my_goal`.`SUG_Time`),
+
+`ltto-001_2015-02-12`.`data_vector5_set_or_update_my_goal`.`SUG_MY_INTENT`
+
+FROM `ltto-001_2015-02-12`.`data_vector5_set_or_update_my_goal`
+group by `ltto-001_2015-02-12`.`data_vector5_set_or_update_my_goal`.`session_user_id`
