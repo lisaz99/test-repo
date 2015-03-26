@@ -1,0 +1,25 @@
+CREATE 
+   
+table `asasasassq` AS
+    SELECT 
+        `forum_posts_w_forumid_25mar2015`.`user_id` AS `user_id`,
+        `forum_posts_w_forumid_25mar2015`.`forum_id` AS `forum_id`,
+        `forum_posts_w_forumid_25mar2015`.`forum_name` AS `forum_name`,
+        `forum_posts_w_forumid_25mar2015`.`parent_id` AS `parent_id`,
+        `forum_posts_w_forumid_25mar2015`.`parent_forum_id` AS `parent_forum_id`,
+        `forum_posts_w_forumid_25mar2015`.`post_id` AS `post_id`,
+        `forum_posts_w_forumid_25mar2015`.`thread_id` AS `thread_id`,
+        `forum_posts_w_forumid_25mar2015`.`deleted` AS `deleted`,
+        `forum_posts_w_forumid_25mar2015`.`is_spam` AS `is_spam`,
+        `forum_posts_w_forumid_25mar2015`.`original` AS `original`,
+        `forum_posts_w_forumid_25mar2015`.`stickied` AS `stickied`,
+        `forum_posts_w_forumid_25mar2015`.`approved` AS `approved`,
+        `forum_posts_w_forumid_25mar2015`.`anonymous` AS `anonymous`,
+        `forum_posts_w_forumid_25mar2015`.`votes` AS `votes`,
+        `forum_posts_w_forumid_25mar2015`.`user_agent` AS `user_agent`,
+        `forum_posts_w_forumid_25mar2015`.`text_type` AS `text_type`,
+      from_unixtime(min(`forum_posts_w_forumid_25mar2015`.`post_time`))AS `first_post`,
+        from_unixtime(MAX(`forum_posts_w_forumid_25mar2015`.`post_time`)) AS `last_post`
+    FROM
+        `forum_posts_w_forumid_25mar2015`
+    GROUP BY `forum_posts_w_forumid_25mar2015`.`parent_id`
