@@ -1,0 +1,128 @@
+
+
+alter table `ltto-001_2015-02-12`.forum_forums_lisa_updated
+change column `id` `forum_id` INT(11) not null auto_increment,
+change column `name` `forum_name` varchar(255) not null,
+add column `parent_name` varchar(45) not null after `forum_id`;
+
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums_lisa_updated.parent_id = 10002 where `ltto-001_2015-02-12`.forum_forums_lisa_updated.child_id = 10002;
+set `ltto-001_2015-02-12`.forum_forums_lisa_updated.parent_id = 10103 where `ltto-001_2015-02-12`.forum_forums_lisa_updated.child_id = 10103;
+set `ltto-001_2015-02-12`.forum_forums_lisa_updated.parent_id = 2
+where `ltto-001_2015-02-12`.forum_forums_lisa_updated.child_id = 2;
+
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums_lisa_updated.parent_id = 3
+where `ltto-001_2015-02-12`.forum_forums_lisa_updated.child_id = 3;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums_lisa_updated.parent_id = 4
+where `ltto-001_2015-02-12`.forum_forums_lisa_updated.child_id = 4;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums_lisa_updated.parent_id = 5
+where `ltto-001_2015-02-12`.forum_forums_lisa_updated.child_id = 5;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums_lisa_updated.parent_id = 6
+where `ltto-001_2015-02-12`.forum_forums_lisa_updated.child_id = 6;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums_lisa_updated.parent_id = 7
+where `ltto-001_2015-02-12`.forum_forums_lisa_updated.child_id = 7;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums_lisa_updated.parent_id = 8
+where `ltto-001_2015-02-12`.forum_forums_lisa_updated.child_id = 8;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums_lisa_updated.parent_id = 9
+where `ltto-001_2015-02-12`.forum_forums_lisa_updated.child_id = 9;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums_lisa_updated.parent_id = 10000
+where `ltto-001_2015-02-12`.forum_forums_lisa_updated.child_id = 10000;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums_lisa_updated.parent_id = 10001
+where `ltto-001_2015-02-12`.forum_forums_lisa_updated.child_id = 10001;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums_lisa_updated.parent_id = 10003
+where `ltto-001_2015-02-12`.forum_forums_lisa_updated.child_id = 10003;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums_lisa_updated.parent_id = 10003
+where `ltto-001_2015-02-12`.forum_forums_lisa_updated.child_id = 10003;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums_lisa_updated.parent_id = 10004
+where `ltto-001_2015-02-12`.forum_forumsv.child_id = 10004;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums_lisa_updated.parent_id = 10005
+where `ltto-001_2015-02-12`.forum_forums_lisa_updated.child_id = 10005;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums_lisa_updated.parent_id = 10006
+where `ltto-001_2015-02-12`.forum_forums_lisa_updated.child_id = 10006;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums_lisa_updated.parent_id = 10014
+where `ltto-001_2015-02-12`.forum_forums_lisa_updated.child_id = 10014;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums.parent_id = 10015
+where `ltto-001_2015-02-12`.forum_forums_lisa_updated.child_id = 10015;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums_lisa_updated.parent_id = 10016
+where `ltto-001_2015-02-12`.forum_forums_lisa_updated.child_id = 10016;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums.parent_id = 10017
+where `ltto-001_2015-02-12`.forum_forums.child_id = 10017;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums.parent_id = 10018
+where `ltto-001_2015-02-12`.forum_forums.child_id = 10018;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums.parent_id = 10018
+where `ltto-001_2015-02-12`.forum_forums.child_id = 10018;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums.parent_id = 10019
+where `ltto-001_2015-02-12`.forum_forums.child_id = 10019;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums.parent_id = 10020
+where `ltto-001_2015-02-12`.forum_forums.child_id = 10020;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums.parent_id = 10100
+where `ltto-001_2015-02-12`.forum_forums.child_id = 10100;
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums.parent_id = 10102
+where `ltto-001_2015-02-12`.forum_forums.child_id = 10102;
+
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated
+set `ltto-001_2015-02-12`.forum_forums.parent_name = "Course Syllabus and Organisation"
+where `ltto-001_2015-02-12`.forum_forums.parent_id = 2;
+
+update `ltto-001_2015-02-12`.forum_forums
+set `ltto-001_2015-02-12`.forum_forums.parent_name = "Module 1: Why is online teaching important?"
+where `ltto-001_2015-02-12`.forum_forums.parent_id = 3;
+
+update `ltto-001_2015-02-12`.forum_forums
+set `ltto-001_2015-02-12`.forum_forums.parent_name = "Weekly Q&A with the instructors"
+where `ltto-001_2015-02-12`.forum_forums.parent_id = 4;
+
+update `ltto-001_2015-02-12`.forum_forums
+set `ltto-001_2015-02-12`.forum_forums.parent_name = "Errata"
+where `ltto-001_2015-02-12`.forum_forums.parent_id = 5;
+update `ltto-001_2015-02-12`.forum_forums
+set `ltto-001_2015-02-12`.forum_forums.parent_name = ""
+where `ltto-001_2015-02-12`.forum_forums.parent_id = 6;
+update `ltto-001_2015-02-12`.forum_forums
+set `ltto-001_2015-02-12`.forum_forums.parent_name = "Course Material Feedback"
+where `ltto-001_2015-02-12`.forum_forums.parent_id = 7;
+update `ltto-001_2015-02-12`.forum_forums
+set `ltto-001_2015-02-12`.forum_forums.parent_name = "Social hangout and networking"
+where `ltto-001_2015-02-12`.forum_forums.parent_id = 8;
+update `ltto-001_2015-02-12`.forum_forums
+set `ltto-001_2015-02-12`.forum_forums.parent_name = "Technical Feedback"
+where `ltto-001_2015-02-12`.forum_forums.parent_id = 9;
+update `ltto-001_2015-02-12`.forum_forums
+set `ltto-001_2015-02-12`.forum_forums.parent_name = "Course Materials Errors"
+where `ltto-001_2015-02-12`.forum_forums.parent_id = 10000;
+update `ltto-001_2015-02-12`.forum_forums
+set `ltto-001_2015-02-12`.forum_forums.parent_name = "Technical Issues"
+where `ltto-001_2015-02-12`.forum_forums.parent_id = 10001;
+update `ltto-001_2015-02-12`.forum_forums
+set `ltto-001_2015-02-12`.forum_forums.parent_name = "Module 1: Why is online teaching important?  "
+where `ltto-001_2015-02-12`.forum_forums.parent_id = 3;
+update `ltto-001_2015-02-12`.forum_forums
+set `ltto-001_2015-02-12`.forum_forums.parent_name = "Module 1: Why is online teaching important?  "
+where `ltto-001_2015-02-12`.forum_forums.parent_id = 3;
+update `ltto-001_2015-02-12`.forum_forums
+set `ltto-001_2015-02-12`.forum_forums.parent_name = "Module 1: Why is online teaching important?  "
+where `ltto-001_2015-02-12`.forum_forums.parent_id = 3;
