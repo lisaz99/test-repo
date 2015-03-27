@@ -1,26 +1,5 @@
-create 
 
-table forum_forums_lisa_updated1
-select * 
-
-from `ltto-001_2015-02-12`.forum_forums;
-
-alter table `ltto-001_2015-02-12`.forum_forums_lisa_updated1
-change column `id` `forum_id` INT(11) not null,
-change column `name` `forum_name` varchar(255) not null,
-add column `parent_name` varchar(45) not null after `forum_id`;
-
-update `ltto-001_2015-02-12`.forum_forums_lisa_updated1 
-
-set parent_id= case 
- when forum_id = 2 then 2
- when forum_id = 3 then 3
- when forum_id = 4  then 4
- end
- where forum_id in (2,3,4);
-#######
-
-drop table forum_forums_lisa_updated1
+drop table forum_forums_lisa_updated1;
 
 create table forum_forums_lisa_updated1
 select * 
@@ -34,57 +13,61 @@ add column `parent_name` varchar(45) not null after `forum_id`;
 
 update `ltto-001_2015-02-12`.forum_forums_lisa_updated1 
 
-set parent_id= case forum_id 
-when 100103 then 10103
- when 2 then 2
- when 3 then 3
- when 4  then 4
- when 5 then 5
- when 6 then 6 
- when 7 then 7
- when 8 then 8
- when 9 then 9 
- when 10000 then 10000
- when 10001 then 10001 
- when 10002 then 10002
- when 10003 then 10003
- when 10004 then 10004
- when 10005 then 10005
- when 10006 then 10006
- when 10014 then 10014
- when 10015 then 10015
- when 10017 then 10017
- when 10018 then 10018
- when 10019 then 10019
- when 10020 then 10020 
- when 10100 then 10100
- when 10102 then 10102
- end,
- parent_name =case parent_id
- when 10002 then `Flagged Content`
- when 10103 then `Discussion Forums`
- when 2 then `Course Syllabus and Organisation`
- when 3 then `Module 1: Why is online teaching important?`  
- when 4  then `Weekly Q&A with the instructors`
- when 5 then `Errata`
- when 6 then `` 
- when 7 then `Course Material Feedback`
- when 8 then `Social hangout and networking`  
- when 9 then `Technical Feedback` 
- when 10000 then `Course Materials Errors`
- when 10001 then `Technical Issues` 
- when 10003 then `STAFF FORUM`
- when 10004 then `Module 2`
- when 10005 then `Module 3`
- when 10006 then `Module 4`
- when 10014 then `Module 5`
- when 10015 then `Module 6` 
- when 10017 then `Module 7`
- when 10018 then `Module 8`
- when 10019 then `Suggestion Box`
- when 10020 then `Signature Track` 
- when 10100 then `Missed Assignment Submissions`
- when 10102 then `'How ToÔÇÖ Support for Using Different Technologies for Teaching`
+set parent_id = case
+ when forum_id =10103 then 10103
+ when forum_id =2 then 2
+ when forum_id =3 then 3
+ when forum_id =4 then 4
+ when forum_id =5 then 5
+ when forum_id =6 then 6 
+ when forum_id =7 then 7
+ when forum_id =8 then 8
+ when forum_id =9 then 9 
+ when forum_id =10000 then 10000
+ when forum_id =10001 then 10001 
+ when forum_id =10002 then 10002
+ when forum_id =10003 then 10003
+ when forum_id =10004 then 10004
+ when forum_id =10005 then 10005
+ when forum_id =10006 then 10006
+ when forum_id =10014 then 10014
+ when forum_id =10015 then 10015
+ when forum_id =10017 then 10017
+ when forum_id =10018 then 10018
+ when forum_id =10019 then 10019
+ when forum_id =10020 then 10020 
+ when forum_id =10100 then 10100
+ when forum_id =10102 then 10102
+ when forum_id =10103 then 10103
+ end
+ where forum_id in (10103,2,3,4,5,6,7,8,9,10000,10001,10002,10003,10004,10005,10006,10014,10015,10017,10018,10019,10020,10100,10102);
+
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated1 
+ set parent_name =case 
+ when parent_id= 10002 then `Flagged Content`
+ when parent_id=2 then `Course Syllabus and Organisation`
+ when parent_id=3 then `Module 1: Why is online teaching important?`  
+ when parent_id=4  then `Weekly Q&A with the instructors`
+ when parent_id=5 then `Errata`
+ when parent_id=6 then `` 
+ when parent_id=7 then `Course Material Feedback`
+ when parent_id=8 then `Social hangout and networking`  
+ when parent_id=9 then `Technical Feedback` 
+ when parent_id=10000 then `Course Materials Errors`
+ when parent_id=10001 then `Technical Issues` 
+ when parent_id=10003 then `STAFF FORUM`
+ when parent_id=10004 then `Module 2`
+ when parent_id=10005 then `Module 3`
+ when parent_id=10006 then `Module 4`
+ when parent_id=10014 then `Module 5`
+ when parent_id=10015 then `Module 6` 
+ when parent_id=10017 then `Module 7`
+ when parent_id=10018 then `Module 8`
+ when parent_id=10019 then `Suggestion Box`
+ when parent_id=10020 then `Signature Track` 
+ when parent_id=10100 then `Missed Assignment Submissions`
+ when parent_id=10102 then `'How ToÔÇÖ Support for Using Different Technologies for Teaching`
+ when parent_id= 10103 then `Discussion Forums`
  end
  # note that the 10016 is delected, no subforums included 
-  where forum_id in (10002,10103,2,3,4,5,6,7,8,9,10000,10001,10002,10003,10004,10005,10006,10014,10015,10017,10018,10019,10020,10100,10102);
+where parent_id in (10002,2,3,4,5,6,7,8,9,10000,10001,10003,10004,10005,10006,10014,10015,10017,10018,10019,10020,10100,10102,10103);
