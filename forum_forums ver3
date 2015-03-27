@@ -1,0 +1,83 @@
+#didnt work 
+#parent_name didnt get updated 
+
+drop table forum_forums_lisa_updated1;
+
+create table forum_forums_lisa_updated1
+select * 
+
+from `ltto-001_2015-02-12`.forum_forums;
+
+alter table `ltto-001_2015-02-12`.forum_forums_lisa_updated1
+change column `id` `forum_id` INT(11) not null,
+change column `name` `forum_name` varchar(255) not null,
+add column `parent_name` varchar(45) not null after `forum_id`,
+add column `parent_id_updated`int(11) not null after `parent_id`;
+
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated1 
+set parent_id_updated = parent_id;
+
+
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated1 
+# need to copy the parent_is then remname it
+
+
+set parent_id_updated = case
+
+ when forum_id =2 then 2
+ when forum_id =3 then 3
+ when forum_id =4 then 4
+ when forum_id =5 then 5
+ when forum_id =6 then 6 
+ when forum_id =7 then 7
+ when forum_id =8 then 8
+ when forum_id =9 then 9 
+ when forum_id =10000 then 10000
+ when forum_id =10001 then 10001 
+ when forum_id =10002 then 10002
+ when forum_id =10003 then 10003
+ when forum_id =10004 then 10004
+ when forum_id =10005 then 10005
+ when forum_id =10006 then 10006
+ when forum_id =10014 then 10014
+ when forum_id =10015 then 10015
+ when forum_id =10017 then 10017
+ when forum_id =10018 then 10018
+ when forum_id =10019 then 10019
+ when forum_id =10020 then 10020 
+ when forum_id =10100 then 10100
+ when forum_id =10102 then 10102
+ when forum_id =10103 then 10103
+ end
+ where forum_id in (10103,2,3,4,5,6,7,8,9,10000,10001,10002,10003,10004,10005,10006,10014,10015,10017,10018,10019,10020,10100,10102);
+
+update `ltto-001_2015-02-12`.forum_forums_lisa_updated1 
+ set parent_name = case 
+
+ when parent_id_updated =2 then `Course Syllabus and Organisation`
+ when parent_id_updated =3 then `Module 1: Why is online teaching important?`  
+ when parent_id_updated=4  then `Weekly Q&A with the instructors`
+ when parent_id_updated=5 then `Errata`
+ when parent_id_updated=6 then `` 
+ when parent_id_updated=7 then `Course Material Feedback`
+ when parent_id_updated=8 then `Social hangout and networking`  
+ when parent_id_updated=9 then `Technical Feedback` 
+ when parent_id_updated=10000 then `Course Materials Errors`
+ when parent_id_updated=10001 then `Technical Issues` 
+when parent_id_updated=10002 then `Flagged Content` 
+when parent_id_updated=10003 then `STAFF FORUM`
+ when parent_id_updated=10004 then `Module 2`
+ when parent_id_updated=10005 then `Module 3`
+ when parent_id_updated=10006 then `Module 4`
+ when parent_id_updated=10014 then `Module 5`
+ when parent_id_updated=10015 then `Module 6` 
+ when parent_id_updated=10017 then `Module 7`
+ when parent_id_updated=10018 then `Module 8`
+ when parent_id_updated=10019 then `Suggestion Box`
+ when parent_id_updated=10020 then `Signature Track` 
+ when parent_id_updated=10100 then `Missed Assignment Submissions`
+ when parent_id_updated=10102 then `'How ToÔÇÖ Support for Using Different Technologies for Teaching`
+  when parent_id_updated=10103 then `Discussion Forums`when parent_id_updated=10002 then `Flagged Content`
+ end
+ # note that the 10016 is delected, no subforums included 
+where parent_id_updated in (10103,2,3,4,5,6,7,8,9,10000,10001,10002,10003,10004,10005,10006,10014,10015,10017,10018,10019,10020,10100,10102);
